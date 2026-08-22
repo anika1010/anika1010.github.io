@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product | Anika Patankar</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+
+    const prototypeImages =
+        document.querySelectorAll(".prototype-image img");
+
+    const lightbox =
+        document.getElementById("prototypeLightbox");
+
+    const lightboxImage =
+        document.getElementById("prototypeLightboxImage");
+
+    const lightboxClose =
+        document.getElementById("prototypeLightboxClose");
+
+
+    prototypeImages.forEach((image) => {
+
+        image.parentElement.addEventListener("click", () => {
+
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+
+            lightbox.classList.add("is-open");
+
+            lightbox.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.classList.add(
+                "modal-open"
+            );
+
+        });
+
+    });
+
+
+    function closePrototypeLightbox() {
+
+        lightbox.classList.remove("is-open");
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.classList.remove(
+            "modal-open"
+        );
+
+        lightboxImage.src = "";
+
+    }
+
+
+    lightboxClose.addEventListener(
+        "click",
+        closePrototypeLightbox
+    );
+
+
+    lightbox.addEventListener(
+        "click",
+        (event) => {
+
+            if (event.target === lightbox) {
+                closePrototypeLightbox();
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                event.key === "Escape" &&
+                lightbox.classList.contains("is-open")
+            ) {
+                closePrototypeLightbox();
+            }
+
+        }
+    );
+
+</script>
+
+<body>
+
+
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+
+<header class="site-header">
+
+    <a href="index.html" class="logo">
+        ANIKA PATANKAR
+    </a>
+
+    <nav>
+        <a href="index.html">About</a>
+        <a href="tech.html">Tech</a>
+        <a href="product.html" class="active">Product</a>
+        <a href="design.html">Design</a>
+    </nav>
+
+</header>
+
+
+
+<main class="product-page">
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="product-hero">
+
+    <p class="eyebrow">
+        PRODUCT CASE STUDY · 2026
+    </p>
+
+    <h1>
+        Making food discovery
+        <em>more personal.</em>
+    </h1>
+
+    <p class="product-hero-description">
+        An independent product case study exploring how trusted
+        recommendations, social context and better categorisation
+        could make choosing where to eat easier.
+    </p>
+
+
+    <div class="product-meta">
+
+        <!-- ROLE -->
+        <div class="meta-group">
+
+            <p class="meta-heading">
+                ROLE
+            </p>
+
+            <p class="meta-value">
+                Product Designer / PM
+            </p>
+
+        </div>
+
+
+        <!-- PROCESS -->
+        <div class="meta-group">
+
+            <p class="meta-heading">
+                PROCESS
+            </p>
+
+            <div class="meta-pills">
+                <span>DISCOVER</span>
+                <span>VALIDATE</span>
+                <span>DEFINE</span>
+                <span>PROTOTYPE</span>
+            </div>
+
+        </div>
+
+
+        <!-- TOOLS -->
+        <div class="meta-group">
+
+            <p class="meta-heading">
+                TOOLS
+            </p>
+
+            <div class="meta-pills">
+                <span>FIGMA</span>
+                <span>LOVABLE</span>
+                <span>RICE</span>
+                <span>MOSCOW</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     01 THE PROBLEM
+========================================= -->
+
+<section class="product-section">
+
+    <aside class="section-label">
+        <span>01</span>
+        <p>THE PROBLEM</p>
+    </aside>
+
+
+    <div class="section-content">
+
+        <h2 class="product-section-title">
+            Restaurant ratings tell you
+            <em>what is popular.</em>
+            Not always what is right for you.
+        </h2>
+
+
+        <div class="problem-grid">
+
+            <p>
+                Traditional review platforms can be overwhelming.
+                Hundreds of anonymous ratings often provide little
+                context around who the restaurant is actually suited for.
+            </p>
+
+            <p>
+                Reviews can also be influenced by incentives, while
+                a single average score says little about occasion,
+                atmosphere, price expectations or who you are dining with.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     02 INITIAL HYPOTHESES
+========================================= -->
+
+<section class="product-section">
+
+    <aside class="section-label">
+        <span>02</span>
+        <p>INITIAL HYPOTHESES</p>
+    </aside>
+
+
+    <div class="section-content">
+
+        <h2 class="product-section-title">
+            Before building, I wanted to understand
+            <em>where the friction actually sits.</em>
+        </h2>
+
+
+        <p class="section-lead">
+            I started with four assumptions about how people currently
+            discover, remember, evaluate and share restaurant recommendations.
+            These became the basis for my initial user interviews.
+        </p>
+
+
+        <div class="hypothesis-grid">
+
+
+            <article class="hypothesis-card">
+
+                <span>01</span>
+
+                <h3>
+                    Recommendations get lost.
+                </h3>
+
+                <p>
+                    People discover restaurants through friends and social
+                    media, but struggle to retrieve those recommendations
+                    when they actually need them.
+                </p>
+
+            </article>
+
+
+            <article class="hypothesis-card">
+
+                <span>02</span>
+
+                <h3>
+                    Occasion changes the decision.
+                </h3>
+
+                <p>
+                    Choosing somewhere for a birthday, date or family dinner
+                    involves different criteria from choosing somewhere for
+                    a casual meal.
+                </p>
+
+            </article>
+
+
+            <article class="hypothesis-card">
+
+                <span>03</span>
+
+                <h3>
+                    Contribution has friction.
+                </h3>
+
+                <p>
+                    People naturally recommend restaurants to friends,
+                    but may not want to actively maintain lists or write
+                    detailed reviews.
+                </p>
+
+            </article>
+
+
+            <article class="hypothesis-card">
+
+                <span>04</span>
+
+                <h3>
+                    Trust is contextual.
+                </h3>
+
+                <p>
+                    A recommendation from someone you know may carry
+                    different weight from an anonymous rating, but the
+                    way that recommendation is presented also matters.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     03 USER INTERVIEWS
+========================================= -->
+
+<section class="product-section interview-section">
+
+    <aside class="section-label">
+        <span>03</span>
+        <p>USER RESEARCH</p>
+    </aside>
+
+
+    <div class="section-content">
+
+        <h2 class="product-section-title">
+            Understanding how people
+            <em>actually choose where to eat.</em>
+        </h2>
+
+
+        <p class="section-lead">
+            I used semi-structured interviews to explore behaviour rather
+            than asking users directly whether they would use the product.
+            Questions focused on recent restaurant decisions, existing
+            saving habits and how recommendations are shared.
+        </p>
+
+
+        <div class="research-grid">
+
+
+            <article class="research-block">
+
+                <span class="research-number">01</span>
+
+                <p class="research-label">
+                    DISCOVERY
+                </p>
+
+                <h3>
+                    Where do recommendations come from?
+                </h3>
+
+                <p>
+                    I asked participants to walk through how they normally
+                    decide where to eat and which sources they naturally
+                    turn to first.
+                </p>
+
+            </article>
+
+
+            <article class="research-block">
+
+                <span class="research-number">02</span>
+
+                <p class="research-label">
+                    REDISCOVERY
+                </p>
+
+                <h3>
+                    What happens after something is saved?
+                </h3>
+
+                <p>
+                    I explored how restaurants are stored across social
+                    media, notes and maps, and whether those systems still
+                    work when users later need a recommendation.
+                </p>
+
+            </article>
+
+
+            <article class="research-block">
+
+                <span class="research-number">03</span>
+
+                <p class="research-label">
+                    CONTEXT
+                </p>
+
+                <h3>
+                    How does the occasion change the search?
+                </h3>
+
+                <p>
+                    Participants were asked to recall a restaurant decision
+                    for a specific occasion and explain which factors
+                    influenced their final choice.
+                </p>
+
+            </article>
+
+
+            <article class="research-block">
+
+                <span class="research-number">04</span>
+
+                <p class="research-label">
+                    CONTRIBUTION
+                </p>
+
+                <h3>
+                    How naturally do people share?
+                </h3>
+
+                <p>
+                    I explored how recommendations are currently shared
+                    and whether people would actively contribute restaurant
+                    recommendations inside a dedicated product.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     04 EARLY RESEARCH FINDINGS
+========================================= -->
+
+<section class="product-section findings-section">
+
+    <aside class="section-label">
+        <span>04</span>
+        <p>EARLY SIGNALS</p>
+    </aside>
+
+
+    <div class="section-content">
+
+        <h2 class="findings-title">
+            Discovery isn't the problem,
+            <em>relevance is.</em>
+        </h2>
+
+
+        <p class="section-lead">
+            Early conversations highlighted several recurring tensions
+            in how people discover, save and choose restaurants.
+            These signals shaped the initial product direction and
+            the assumptions to test further.
+        </p>
+
+
+        <div class="finding-list">
+
+
+            <!-- FINDING 01 -->
+
+            <article class="finding-row">
+
+                <span class="finding-number">
+                    01
+                </span>
+
+                <div>
+
+                    <h3>
+                        Saving is not the same as rediscovery.
+                    </h3>
+
+                    <p>
+                        People can accumulate large collections of saved
+                        restaurants across social media, maps and other
+                        platforms, but those recommendations are not always
+                        easy to retrieve when deciding where to eat.
+                    </p>
+
+                </div>
+
+                <p class="finding-insight">
+                    The opportunity may be less about helping users find
+                    more restaurants and more about resurfacing the right
+                    recommendation when it becomes relevant.
+                </p>
+
+            </article>
+
+
+
+            <!-- FINDING 02 -->
+
+            <article class="finding-row">
+
+                <span class="finding-number">
+                    02
+                </span>
+
+                <div>
+
+                    <h3>
+                        Context affects whether a recommendation is useful.
+                    </h3>
+
+                    <p>
+                        A restaurant that looks appealing when it is first
+                        discovered may not fit the user's needs later because
+                        of factors such as location, price, occasion or who
+                        they are dining with.
+                    </p>
+
+                </div>
+
+                <p class="finding-insight">
+                    Recommendations could become more useful when they are
+                    organised and resurfaced according to the user's
+                    immediate context.
+                </p>
+
+            </article>
+
+
+
+            <!-- FINDING 03 -->
+
+            <article class="finding-row">
+
+                <span class="finding-number">
+                    03
+                </span>
+
+                <div>
+
+                    <h3>
+                        Different occasions change what matters.
+                    </h3>
+
+                    <p>
+                        Restaurant decisions are rarely based on cuisine
+                        or ratings alone. For more specific occasions,
+                        factors such as atmosphere, formality, menu
+                        suitability, price and location become more important.
+                    </p>
+
+                </div>
+
+                <p class="finding-insight">
+                    Discovery could move beyond generic ratings by helping
+                    users understand what kind of experience a restaurant
+                    is actually suited for.
+                </p>
+
+            </article>
+
+
+
+            <!-- FINDING 04 -->
+
+            <article class="finding-row">
+
+                <span class="finding-number">
+                    04
+                </span>
+
+                <div>
+
+                    <h3>
+                        Recommendations are social, but sharing needs to be easy.
+                    </h3>
+
+                    <p>
+                        Restaurant recommendations are often exchanged
+                        naturally through messages and conversations.
+                        Creating detailed reviews or maintaining curated
+                        lists, however, requires significantly more effort.
+                    </p>
+
+                </div>
+
+                <p class="finding-insight">
+                    A social discovery product should make contributing
+                    lightweight, capturing useful recommendations without
+                    requiring users to behave like reviewers or creators.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     05 PRODUCT DIRECTION
+========================================= -->
+
+<section class="product-section direction-section">
+
+    <aside class="section-label">
+        <span>05</span>
+        <p>PRODUCT DIRECTION</p>
+    </aside>
+
+
+    <div class="section-content">
+
+        <h2 class="product-section-title">
+            Design around the <em>decision.</em>
+        </h2>
+
+
+        <p class="section-lead">
+            The early research shifted the concept away from simply
+            creating another restaurant review platform. The product
+            instead focuses on making existing recommendations easier
+            to organise, understand and rediscover.
+        </p>
+
+
+        <div class="direction-flow">
+
+
+            <div class="direction-item">
+
+                <span>01</span>
+
+                <h3>
+                    Trusted recommendations
+                </h3>
+
+                <p>
+                    Surface recommendations from people users already
+                    know and trust.
+                </p>
+
+            </div>
+
+
+            <div class="direction-arrow">
+                →
+            </div>
+
+
+            <div class="direction-item">
+
+                <span>02</span>
+
+                <h3>
+                    Relevant context
+                </h3>
+
+                <p>
+                    Add information about occasion, vibe, location and
+                    other factors that influence restaurant choice.
+                </p>
+
+            </div>
+
+
+            <div class="direction-arrow">
+                →
+            </div>
+
+
+            <div class="direction-item">
+
+                <span>03</span>
+
+                <h3>
+                    Easier decisions
+                </h3>
+
+                <p>
+                    Help users narrow their options without comparing
+                    hundreds of anonymous ratings.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     06 PROTOTYPE
+========================================= -->
+
+<section class="product-section prototype-section">
+
+    <aside class="section-label">
+        <span>06</span>
+        <p>PROTOTYPE</p>
+    </aside>
+
+
+    <div class="section-content">
+
+        <h2 class="prototype-title">
+            Turning the idea into a
+            <em>tangible experience.</em>
+        </h2>
+
+
+        <p class="section-lead prototype-intro">
+            I translated the initial product direction into a prototype
+            focused on making restaurant discovery more contextual,
+            social and easy to navigate.
+        </p>
+
+
+        <div class="prototype-gallery">
+
+
+            <!-- HOME -->
+
+            <figure class="prototype-card">
+
+                <div class="prototype-image">
+
+                    <img
+                        src="images/product_home.png"
+                        alt="Food discovery home screen prototype">
+
+                </div>
+
+
+                <figcaption>
+
+                    <span>01</span>
+
+                    <div>
+
+                        <h3>
+                            Discover
+                        </h3>
+
+                        <p>
+                            A personalised starting point for discovering
+                            restaurants through relevant recommendations
+                            and social context.
+                        </p>
+
+                    </div>
+
+                </figcaption>
+
+            </figure>
+
+
+
+            <!-- RESTAURANT -->
+
+            <figure class="prototype-card">
+
+                <div class="prototype-image">
+
+                    <img
+                        src="images/product_restaurant.png"
+                        alt="Restaurant details screen prototype">
+
+                </div>
+
+
+                <figcaption>
+
+                    <span>02</span>
+
+                    <div>
+
+                        <h3>
+                            Restaurant Details
+                        </h3>
+
+                        <p>
+                            Restaurant information goes beyond a single
+                            rating by surfacing context that helps users
+                            understand whether a place fits their needs.
+                        </p>
+
+                    </div>
+
+                </figcaption>
+
+            </figure>
+
+
+
+            <!-- REVIEW -->
+
+            <figure class="prototype-card">
+
+                <div class="prototype-image">
+
+                    <img
+                        src="images/product_review.png"
+                        alt="Restaurant recommendation screen prototype">
+
+                </div>
+
+
+                <figcaption>
+
+                    <span>03</span>
+
+                    <div>
+
+                        <h3>
+                            Share a Recommendation
+                        </h3>
+
+                        <p>
+                            A lightweight way to capture why someone
+                            enjoyed a restaurant without requiring them
+                            to write a lengthy traditional review.
+                        </p>
+
+                    </div>
+
+                </figcaption>
+
+            </figure>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     07 WHAT I WOULD TEST
+========================================= -->
+
+<section class="product-section test-section">
+
+    <aside class="section-label">
+        <span>07</span>
+        <p>VALIDATION</p>
+    </aside>
+
+
+    <div class="section-content">
+
+        <h2 class="product-section-title">
+            Test the <em>assumptions.</em>
+        </h2>
+
+
+        <div class="test-grid">
+
+
+            <article>
+
+                <p class="research-label">
+                    LOOK FOR
+                </p>
+
+                <h3>
+                    What information actually matters?
+                </h3>
+
+                <p>
+                    Observe which pieces of restaurant information users
+                    notice and use first when comparing options.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <p class="research-label">
+                    TEST
+                </p>
+
+                <h3>
+                    Do friend recommendations increase trust?
+                </h3>
+
+                <p>
+                    Compare decisions made with anonymous reviews against
+                    decisions where recommendations from friends are visible.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <p class="research-label">
+                    MEASURE
+                </p>
+
+                <h3>
+                    Does the product make choosing easier?
+                </h3>
+
+                <p>
+                    Evaluate whether users can confidently reach a restaurant
+                    decision faster with contextual recommendations.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     08 FUTURE ITERATIONS
+========================================= -->
+
+<section class="product-section iteration-section">
+
+    <aside class="section-label">
+        <span>08</span>
+        <p>NEXT ITERATION</p>
+    </aside>
+
+
+    <div class="section-content">
+
+        <h2 class="product-section-title">
+            Build. Learn. Refine.
+        </h2>
+
+
+        <p class="section-lead">
+            The current prototype is a starting point rather than a finished
+            product. The next iteration would be driven by additional user
+            research and usability testing.
+        </p>
+
+
+        <div class="iteration-list">
+
+
+            <article class="iteration-row">
+
+                <span>01</span>
+
+                <div>
+
+                    <h3>
+                        Simplify restaurant cards.
+                    </h3>
+
+                    <p>
+                        Test which information genuinely helps users decide
+                        and remove anything that creates unnecessary noise.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="iteration-row">
+
+                <span>02</span>
+
+                <div>
+
+                    <h3>
+                        Surface friend context earlier.
+                    </h3>
+
+                    <p>
+                        Explore whether seeing who recommended a restaurant
+                        earlier in the discovery flow changes perceived trust
+                        and relevance.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="iteration-row">
+
+                <span>03</span>
+
+                <div>
+
+                    <h3>
+                        Refine occasion and vibe categories.
+                    </h3>
+
+                    <p>
+                        Use additional interviews to understand the language
+                        people naturally use when describing where they want
+                        to eat.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="iteration-row">
+
+                <span>04</span>
+
+                <div>
+
+                    <h3>
+                        Reduce contribution effort.
+                    </h3>
+
+                    <p>
+                        Experiment with lightweight prompts, tags and quick
+                        reactions so useful recommendations can be captured
+                        without requiring users to write full reviews.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+<!-- =========================================
+     PROTOTYPE IMAGE VIEWER
+========================================= -->
+
+<div
+    class="prototype-lightbox"
+    id="prototypeLightbox"
+    aria-hidden="true"
+>
+
+    <div class="prototype-lightbox-inner">
+
+        <button
+            class="prototype-lightbox-close"
+            id="prototypeLightboxClose"
+            type="button"
+            aria-label="Close enlarged prototype"
+        >
+            ×
+        </button>
+
+        <img
+            id="prototypeLightboxImage"
+            src=""
+            alt=""
+        >
+
+    </div>
+
+</div>
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="site-footer">
+
+    <p>
+        ANIKA PATANKAR
+    </p>
+
+    <div class="footer-links">
+
+        <a href="https://www.linkedin.com/in/anika-patankar" target="_blank">
+            LinkedIn
+        </a>
+
+        <a href="https://github.com/anika1010" target="_blank">
+            GitHub
+        </a>
+
+        <a href="mailto: anika1553@gmail.com">
+            Email
+        </a>
+
+    </div>
+
+    <p>
+        2026
+    </p>
+
+</footer>
+
+
+</body>
+</html>
